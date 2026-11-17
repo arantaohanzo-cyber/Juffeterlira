@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Juffeter Lira | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080b16;
+    color: white;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 22px 8%;
+    background: rgba(8,11,22,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border-bottom: 1px solid #00d9ff;
+}
+
+.logo {
+    color: #00d9ff;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #00d9ff;
+}
+
+/* SECTIONS */
+section {
+    min-height: 100vh;
+    padding: 120px 8% 70px;
+}
+
+/* HOME */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, #102b45, #080b16 70%);
+}
+
+.home-content {
+    max-width: 750px;
+}
+
+/* PROFILE PICTURE */
+.profile {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #00d9ff;
+    box-shadow: 0 0 20px #00d9ff,
+                0 0 45px rgba(0,217,255,0.5);
+    margin-bottom: 30px;
+    transition: .4s;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 35px #00d9ff,
+                0 0 65px #00d9ff;
+}
+
+.home-content h3 {
+    color: #00d9ff;
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.home-content h1 {
+    font-size: 55px;
+    margin: 20px 0;
+    text-shadow: 0 0 20px rgba(0,217,255,.4);
+}
+
+.home-content h2 {
+    color: #00d9ff;
+    font-size: 25px;
+}
+
+.home-content p {
+    color: #b8c5d8;
+    line-height: 1.9;
+    margin: 20px auto;
+    font-size: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: #00d9ff;
+    color: #080b16;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: .3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 30px #00d9ff;
+    transform: translateY(-4px);
+}
+
+/* HEADINGS */
+.heading {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.heading span {
+    color: #00d9ff;
+}
+
+/* ABOUT */
+.about {
+    background: #0d1527;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 45px;
+    background: #121f38;
+    border: 1px solid #00d9ff;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,217,255,.12);
+    text-align: center;
+}
+
+.about-box h2 {
+    color: #00d9ff;
+    margin-bottom: 25px;
+}
+
+.about-box p {
+    color: #c2ccdc;
+    line-height: 2;
+    font-size: 18px;
+}
+
+/* SKILLS */
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill-container {
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.skill-box {
+    background: #121f38;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #164b65;
+    transition: .4s;
+}
+
+.skill-box:hover {
+    transform: translateY(-8px);
+    border-color: #00d9ff;
+    box-shadow: 0 0 25px rgba(0,217,255,.3);
+}
+
+.skill-box h3 {
+    color: #00d9ff;
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+.skill-box p {
+    color: #b8c5d8;
+    line-height: 1.6;
+}
+
+/* CONTACT */
+.contact {
+    background: #0d1527;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-box {
+    max-width: 650px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 25px;
+    background: #121f38;
+    border: 1px solid #00d9ff;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0,217,255,.15);
+}
+
+.contact-box p {
+    margin: 25px 0;
+    font-size: 18px;
+    color: #c2ccdc;
+}
+
+.contact-box a {
+    color: #00d9ff;
+    text-decoration: none;
+}
+
+.contact-box a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #050812;
+    color: #8995a9;
+    border-top: 1px solid #172b4d;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 10px;
+    }
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        margin: 0;
+        font-size: 12px;
+    }
+
+    .home-content h1 {
+        font-size: 38px;
+    }
+
+    .home-content h2 {
+        font-size: 21px;
+    }
+
+    .home-content h3 {
+        font-size: 13px;
+    }
+
+    .profile {
+        width: 210px;
+        height: 210px;
+    }
+
+    .skill-container {
+        grid-template-columns: 1fr;
+    }
+
+    .heading {
+        font-size: 32px;
+    }
+
+    .about-box {
+        padding: 25px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+
+    <div class="logo">JUFFETER.</div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT ME</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+
+</header>
+
+<!-- HOME -->
+<section class="home" id="home">
+
+    <div class="home-content">
+
+        <img src="profile.jpg"
+             alt="Juffeter Lira Profile"
+             class="profile">
+
+        <h3>WELCOME TO MY PERSONAL WEBSITE</h3>
+
+        <h1>JUFFETER LIRA</h1>
+
+        <h2>Student | Future Professional</h2>
+
+        <p>
+            Hello and welcome to my personal portfolio.
+            I am passionate about technology, creativity,
+            and learning new things. This website is a
+            place where you can get to know me, my skills,
+            and my goals.
+        </p>
+
+        <a href="#about" class="btn">
+            EXPLORE MY PROFILE
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ABOUT ME -->
+<section class="about" id="about">
+
+    <h1 class="heading">
+        ABOUT <span>ME</span>
+    </h1>
+
+    <div class="about-box">
+
+        <h2>Get To Know Me</h2>
+
+        <p>
+            Hello! My name is Juffeter Lira.
+            I am a student who enjoys exploring
+            technology and discovering new opportunities.
+
+            I believe that learning is a continuous journey.
+            I always try to improve my knowledge,
+            develop my abilities, and become a better
+            version of myself.
+
+            My goal is to gain more experience,
+            achieve success, and build a bright future.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+
+    <h1 class="heading">
+        MY <span>SKILLS</span>
+    </h1>
+
+    <div class="skill-container">
+
+        <div class="skill-box">
+            <h3>01. HTML</h3>
+            <p>
+                Basic knowledge of creating and
+                organizing web pages using HTML.
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>02. Computer Skills</h3>
+            <p>
+                Basic computer operations and
+                familiarity with digital tools.
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>03. Teamwork</h3>
+            <p>
+                Working together with others
+                to complete activities and projects.
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>04. Communication</h3>
+            <p>
+                Sharing ideas, listening,
+                and communicating with others.
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>05. Problem Solving</h3>
+            <p>
+                Learning to understand problems
+                and find possible solutions.
+            </p>
+        </div>
+
+        <div class="skill-box">
+            <h3>06. Willingness to Learn</h3>
+            <p>
+                Always open to new knowledge,
+                experiences, and improvements.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <h1 class="heading">
+        CONTACT <span>ME</span>
+    </h1>
+
+    <div class="contact-box">
+
+        <p>
+            <strong>PHONE:</strong><br>
+            <a href="tel:090706050404">
+                090706050404
+            </a>
+        </p>
+
+        <p>
+            <strong>GMAIL:</strong><br>
+            <a href="mailto:juffeterlira@gmail.com">
+                juffeterlira@gmail.com
+            </a>
+        </p>
+
+        <p>
+            Feel free to contact me.
+            Thank you for visiting my personal portfolio!
+        </p>
+
+        <a href="#home" class="btn">
+            BACK TO HOME
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>
+        © 2026 JUFFETER LIRA | ALL RIGHTS RESERVED
+    </p>
+</footer>
+
+</body>
+</html>
